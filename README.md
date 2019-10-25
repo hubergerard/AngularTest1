@@ -9,8 +9,11 @@ Le but du projet est de pouvoir récupérer une liste de pokemon via une api et 
 APP --> Pokemon --> Pokemon-list --> Pokemon-item 
 
 Le component Pokemon contient l'input qui sert à faire la recherche d'un pokemon. Il est en charge d'instancier le component Pokemon-list lorsque c'est nécessaire.
+
 Le component Pokemon-list est chargé d'afficher une liste de Pokemon qui lui est passée en input par le component Pokemon. Pour cela, on décide que le component Pokemon-list est chargé d'instancier autant de component Pokemon-item que nécessaire.
+
 Le component Pokemon-item est chargé d'afficher un Pokemon que le component Pokemon-list lui passera en input. C'est aussi lui qui est chargé d'afficher les détails supplémentaires quand on clique sur un pokemon.
+
 Vous pouvez choisir ou non de créer le component Pokemon-item-detail, chargé d'afficher les détails du pokemon. Ou bien de laisser cette partie là dans Pokemon-item.
 
 ### Model
