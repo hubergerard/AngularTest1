@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h3 class="text-center">Recherche de Pokemon:</h3>
+            <form [formGroup]="pokemonForm" (ngSubmit)="typePokemon(pokemonForm.value)">
+                <div class="form-group">
+                    <input class="form-control" type="text" id="Pokemon" placeholder="Pokemon" formControlName="pokemon" />
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-success btn-md">
+                    Rechercher Pokemon</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <h3 class="text-center">Pokemon Détails:</h3>
+            <p class="text-center">id : {{this.pokemonData?.id}}</p>
+            <p class="text-center">name : {{this.pokemonData?.name}}</p>
+            <p class="text-center">weight : {{this.pokemonData?.weight}}</p>
+        </div>
+    </div>
+</div>
