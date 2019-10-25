@@ -1,0 +1,13 @@
+<h4>Liste de pokemons</h4>
+<div *ngFor="let pokemon of pokemonList">
+    <div>
+        <a (click)="selectedPokemon=pokemon.name">{{pokemon.name}}</a>
+    
+        <p>{{pokemon.url}}</p>
+    </div>
+</div>
+<div>
+    Détails du pokemon selectionné
+    <app-pokemon-item [pokemon]="selectedPokemon"></app-pokemon-item>
+</div>
+
