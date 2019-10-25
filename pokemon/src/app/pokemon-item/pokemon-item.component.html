@@ -1,0 +1,12 @@
+<div>
+<tr>
+  <td>Name :{{pokemonItem.name |json}}</td>
+
+  <td>
+    <button type="submit" (click)="getDetail(pokemonItem.url)"> Afficher les détail du pokemon
+    </button>
+  </td>
+  <td *ngIf="test"> <img src="{{test.sprites.back_default}}"> </td>
+  <td *ngIf="test"> {{test.forms| json}}</td>
+</tr>
+</div>
