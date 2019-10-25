@@ -1,0 +1,7 @@
+.desc {
+    display: flex;
+}
+
+.desc > div {
+    font-size: 24px;
+}

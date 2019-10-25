@@ -8,9 +8,8 @@ import { PokemonService } from '../pokemon-service.service';
 })
 export class PokemonSearchComponent implements OnInit {
 
-  @Input() name: string;
-  private pokemonResults: Object = undefined;
-  @Output() pokemonToSearch = new EventEmitter();
+  pokemonName: string;
+  @Output() searchEvent = new EventEmitter();
 
   constructor(private pokemonService: PokemonService) { }
 
@@ -18,16 +17,10 @@ export class PokemonSearchComponent implements OnInit {
   }
 
   public search() {
-    let request = this.pokemonService.getPokemonByName(this.name);
-    
-      request.subscribe((datas) => {
+    let request = this.pokemonService.getPokemonByName(this.pokemonName);
 
-        if (!datas['ok']) {
-          this.pokemonResults = datas;
-
-          console.log(datas);
-          this.pokemonToSearch.emit(this.pokemonResults);
-        }
-      });
+    request.subscribe((datas) => {
+      this.searchEvent.emit(datas);
+    });
   }
 }

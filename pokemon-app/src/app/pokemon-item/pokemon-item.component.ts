@@ -15,4 +15,17 @@ export class PokemonItemComponent implements OnInit {
   ngOnInit() {
   }
 
+  public getFavorite() : string {
+    return localStorage.getItem(this.pokemon.name) != null ? "💛" : "🧡";
+  }
+
+  public setFavorite() {
+    if (localStorage.getItem(this.pokemon.name) == null) {
+      localStorage.setItem(this.pokemon.name, "true");
+    }
+    else {
+      localStorage.removeItem(this.pokemon.name);
+    }
+  }
+
 }

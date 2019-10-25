@@ -1,7 +1,10 @@
-<app-pokemon-item [pokemon]="pokemonItem"></app-pokemon-item>
+<div style="display: flex; margin-top:  10%;"> 
+        <div (click)="nextList(false)" style="font-size: 30px; margin-right: 10%;"><- previous</div>
+        <div (click)="nextList(true)" style="font-size: 30px;">next -></div>
+</div>
 
 <ul *ngIf="pokemons">
     <li *ngFor="let pokemon of pokemons">
-        <div (click)="displayStats(pokemon.name)">{{ pokemon.name }}</div>
+        <app-pokemon-item [pokemon]="pokemon" (click)="selectPokemon(pokemon.name)">{{ pokemon.name }}</app-pokemon-item>
     </li>
 </ul>

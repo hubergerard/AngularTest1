@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PokemonService } from '../pokemon-service.service';
 import { Pokemon } from '../pokemon';
 
@@ -10,21 +10,36 @@ import { Pokemon } from '../pokemon';
 export class PokemonListComponent implements OnInit {
 
   private pokemons: Array<Pokemon> = [];
-  @Input() pokemonItem: Pokemon;
+  private offset: number = 0;
+  private limit: number = 20;
+  @Output() selectEvent = new EventEmitter<Pokemon>();
 
   constructor(private pokemonService: PokemonService) { }
 
   ngOnInit() {
-    this.pokemonService.getAllPokemon().subscribe((datas)=>{
-      this.pokemons = datas['results'];
+    this.refreshList();
+  }
+
+  public selectPokemon(name: string) {
+    this.pokemonService.getPokemonByName(name).subscribe((datas) => {
+      this.selectEvent.emit(datas);
     });
   }
 
-  public displayStats(name) {
-    this.pokemonService.getPokemonByName(name).subscribe((pokemon) => {
-      this.pokemonItem = pokemon;
-      console.log(this.pokemonItem);
+  public refreshList() {
+    this.pokemonService.getAllPokemon(this.offset).subscribe((datas)=>{
+      this.pokemons = [];
+      for(let pokemon of datas['results']) {
+        this.pokemonService.getPokemonByName(pokemon.name).subscribe((data) => {
+          this.pokemons.push(data);
+        });
+      }
     });
   }
 
+  public nextList(next: boolean) {
+    this.offset += next ? this.limit : -this.limit;
+    this.refreshList();
+  }
+  
 }

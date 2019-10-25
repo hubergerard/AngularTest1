@@ -13,24 +13,14 @@ export class PokemonService {
   constructor(private http: HttpClient) { }
 
   public getPokemonById(id: number) : Observable<Pokemon> {
-    try {
-      return this.http.get<Pokemon>(this.url + id + "/");
-    }
-    catch {
-      return null;
-    }
+    return this.http.get<Pokemon>(this.url + id + "/");
   }
 
   public getPokemonByName(name: string) : Observable<Pokemon> {
-    try {
-      return this.http.get<Pokemon>(this.url + name + "/");
-    }
-    catch {
-      return null;
-    }
+    return this.http.get<Pokemon>(this.url + name + "/");
   }
 
-  public getAllPokemon() : Observable<Pokemon[]> {
-    return this.http.get<Pokemon[]>(this.url);
+  public getAllPokemon(offset: number) : Observable<Pokemon[]> {
+    return this.http.get<Pokemon[]>(this.url + "?offset=" + offset);
   }
 }

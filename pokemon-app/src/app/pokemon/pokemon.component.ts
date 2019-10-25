@@ -8,11 +8,14 @@ import { Pokemon } from '../pokemon';
 })
 export class PokemonComponent implements OnInit {
 
-  pokemonName: string;
+  pokemon: Pokemon;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  public getPokemon(pokemon: Pokemon) {
+    this.pokemon = pokemon;
+  }
 }

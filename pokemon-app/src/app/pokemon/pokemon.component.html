@@ -1,7 +1,9 @@
 <h1>Pokemon Searcher 🐱‍🐉</h1>
 
-<input type="text" [(ngModel)]="pokemonName">
+<app-pokemon-search (searchEvent)="getPokemon($event)"></app-pokemon-search>
 
-<app-pokemon-search [name]="pokemonName"></app-pokemon-search>
+<div *ngIf="pokemon != undefined">
+    <app-pokemon-detail [pokemon]="pokemon"></app-pokemon-detail>
+</div>
 
-<app-pokemon-list></app-pokemon-list>
+<app-pokemon-list (selectEvent)="getPokemon($event)"></app-pokemon-list>

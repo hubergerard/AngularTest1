@@ -1,0 +1,11 @@
+li {
+    cursor: pointer;
+    width: 30%;
+    list-style: none;
+}
+
+ul {
+    display: flex;
+    flex-flow: row wrap;
+}
+
