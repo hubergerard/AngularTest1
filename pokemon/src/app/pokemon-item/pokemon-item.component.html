@@ -1,0 +1,6 @@
+<div>
+    {{pokemonItem.name | json}}
+    <button (click)="getDetail(pokemonItem.url)">Plus d'infos</button>
+    <td *ngIf="poketest"> <img src="{{poketest.sprites.back_default}}"> </td>
+</div>
+
