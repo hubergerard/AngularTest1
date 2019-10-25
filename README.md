@@ -2,13 +2,13 @@
 
 Créer un nouveau projet pokemon
 
-Le but du projet est de pouvoir récupérer une liste de pokemon via une api et de l'afficher.
+Le but du projet est de pouvoir récupérer une liste de pokemon via [PokeApi](https://pokeapi.co/) et de l'afficher.
 
 ### Components 
 
 APP --> Pokemon --> Pokemon-list --> Pokemon-item 
 
-**Le component Pokemon** contient l'input qui sert à faire la recherche d'un pokemon. Il est en charge d'instancier le component Pokemon-list lorsque c'est nécessaire.
+**Le component Pokemon** contient toute la page. Il contient donc l'input qui sert à faire la recherche d'un pokemon et il est en charge d'instancier le component Pokemon-list lorsque c'est nécessaire.
 
 **Le component Pokemon-list** est chargé d'afficher une liste de Pokemon qui lui est passée en input par le component Pokemon. Pour cela, on décide que le component Pokemon-list est chargé d'instancier autant de component Pokemon-item que nécessaire.
 
@@ -23,7 +23,7 @@ Créer la classe du modèle Pokemon, ainsi que la classe PokemonDetail
 ### Service 
 
 Créer le service PokemonService. 
-Il contient les méthodes :
+Il contient au minimum les méthodes :
 - `getPokemon(id: number): Observable<Pokemon> { // sert à obtenir des détails sur un pokemon en fonction de son numéro }`
 - `getPokemons(): Observable<Pokemon[]> { // sert à obtenir une liste de Pokemon }`
 
