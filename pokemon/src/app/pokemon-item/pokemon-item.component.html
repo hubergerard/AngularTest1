@@ -2,5 +2,8 @@
     {{pokemonItem.name | json}}
     <button (click)="getDetail(pokemonItem.url)">Plus d'infos</button>
     <td *ngIf="poketest"> <img src="{{poketest.sprites.back_default}}"> </td>
+    <td *ngIf="poketest"> <img src="{{poketest.sprites.front_default}}"> </td>
+    <td *ngIf="poketest"> <img src="{{poketest.sprites.back_shiny}}"> </td>
+    <td *ngIf="poketest" ><div *ngFor="let ability of poketest.abilities"> Attaque : {{ ability.ability.name }}</div>  </td>
 </div>
 
