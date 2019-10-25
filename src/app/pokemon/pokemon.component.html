@@ -24,6 +24,10 @@
           <h3 class="text-center">Détails du Pokemon :</h3>
             <p class="text-center">Nom du Pokemon {{this.pokemonData?.name}}</p>
             <p class="text-center">Numéro du Pokemon {{this.pokemonData?.id}}</p>
+        <ul>Capacités :
+                <li>{{this.pokemonData?.abilities[0].ability.name}}</li>
+                <li>{{this.pokemonData?.abilities[1].ability.name}}</li>
+         </ul>
     </div>
     </div>
 
