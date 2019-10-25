@@ -39,7 +39,7 @@ En tant qu'utilisateur de l'app Pokemon, je veux pouvoir :
 
 ## Consignes
 
-La liste des Pokémon doit contenir une image. (A faire en dernier)
+Les pokémon affichés dans la liste doivent avoir une image. (Conseil : Ne vous souciez pas de ça au début)
 
 Créez un component PokemonSearch, qui contient l'input. (EventEmitter nécessaire)
 
