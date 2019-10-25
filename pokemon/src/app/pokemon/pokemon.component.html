@@ -1,0 +1,55 @@
+<div class="container">
+    
+    <label for="basic-url">Your vanity Pokemon</label>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon3">Pokemon Name</span>
+        </div>
+        <input type="text" value="ivysaur" class="form-control" id="basic-url" aria-describedby="basic-addon3" [(ngModel)]="name_pokemon">
+        <button type="button" class="btn btn-primary" (click)="getPokemon(name_pokemon)">Search Pokemon</button>
+
+        
+    </div>
+
+    <div class="card" style="width: 18rem;">
+        <img src="{{pokemon.sprites.back_default}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{pokemon.name}}</h5>
+            <p>{{description_pokemon}}</p>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <H1>List de Pokemon:</H1>
+    <br />
+    <br />
+    <div class="container col-md-12">
+        <div class="row">
+            <div class="col">
+                <ul>
+                    <li *ngFor="let item of list_pokemon">
+                        <button class="btn btn-primary" (click)="getDetailsPokemon(item.name)">{{item.name}}</button>
+                        <br />
+                        <br />
+                    </li>
+                </ul>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{detailsPokemon.sprites.back_default}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{detailsPokemon.name}}</h5>
+                    </div>
+                </div>
+                </div>
+        </div>
+    
+        
+
+    </div>
+
+
+
+</div>
