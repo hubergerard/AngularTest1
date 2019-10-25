@@ -45,7 +45,7 @@ Créez un component PokemonSearch, qui contient l'input. (EventEmitter nécessai
 
 Un point bonus est accordé à ceux qui décident d'utiliser un framework CSS (de préférence Bootstrap / Material)
 
-Vous êtes notés en fonction du nombres de fonctionnalités codées, de la maniabilité, du style
+Vous êtes notés en fonction du nombres de fonctionnalités codées, de la maniabilité de l'appli, de la propreté du code et du style
 
 ### Indications :
 
