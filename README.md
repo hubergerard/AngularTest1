@@ -51,9 +51,13 @@ L'affichage des détails sera codé dans le component Pokemon-item. Il est recom
 ### Pour bien démarrer :
 
 Vous allez commencer par créer le component Pokemon, celui qui contient toute la page, et à l'appeler dans app.
+
 Créer ensuite la classe de modèle Pokemon (name, url)
+
 Codez ensuite le service qui doit faire un appel à l'api Pokemon, pour obtenir une liste de pokemon.
+
 Le ngOnInit du component Pokemon doit maintenant appeler ce service pour récuperer une liste de Pokemon (nom et url des détails).
+
 Le component Pokemon doit ensuite afficher cette liste. Créez le component Pokemon-list et appelez-le depuis le component Pokemon, en lui passant la liste de Pokemon en input.
 
 
