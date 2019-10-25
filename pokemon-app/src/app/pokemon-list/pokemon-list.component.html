@@ -2,6 +2,6 @@
 
 <ul *ngIf="pokemons">
     <li *ngFor="let pokemon of pokemons">
-        <div>{{ pokemon.name }}</div>
+        <div (click)="displayStats(pokemon.name)">{{ pokemon.name }}</div>
     </li>
 </ul>

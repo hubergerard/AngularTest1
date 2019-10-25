@@ -27,9 +27,4 @@ export class PokemonListComponent implements OnInit {
     });
   }
 
-  public getPokemonSearched(pokemon: Pokemon) {
-    console.log("searched ?");
-    this.pokemonItem = pokemon;
-  }
-
 }
