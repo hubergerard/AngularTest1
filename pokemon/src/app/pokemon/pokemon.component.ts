@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonService } from '../pokemon.service';
-
+import { Pokemon } from "../Pokemon.model";
 @Component({
   selector: 'app-pokemon',
   templateUrl: './pokemon.component.html',
@@ -15,19 +15,12 @@ export class PokemonComponent implements OnInit {
   constructor(private PokemonService: PokemonService) { }
 
   ngOnInit() {
-    this.PokemonService.getPokemons().subscribe((data: Pokemon[]) => {
-      this.pokemon = data;
-      console.log(this.pokemon);
-    })
 }
 
 
   showPokemon() {
     this.PokemonService.getPokemons()
-      .subscribe((data: PokemonComponent) => this.pokemon = {
-          name: data['name'],
-          url:  data['url'],
-      });
+      .subscribe((data: Pokemon[]) => this.pokemon = data);
       console.log(this.pokemon)
   }
  
