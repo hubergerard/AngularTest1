@@ -1,0 +1,7 @@
+<app-pokemon-item [pokemon]="pokemonItem"></app-pokemon-item>
+
+<ul *ngIf="pokemons">
+    <li *ngFor="let pokemon of pokemons">
+        <div (click)="displayStats(pokemon.name)">{{ pokemon.name }}</div>
+    </li>
+</ul>
