@@ -23,5 +23,8 @@ export class PokemonService {
     return this.list;
 
   }
+  sendToLocal(list){
+
+  }
 
     }

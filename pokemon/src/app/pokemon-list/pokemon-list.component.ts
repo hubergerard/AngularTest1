@@ -13,6 +13,7 @@ export class PokemonListComponent implements OnInit {
   constructor(private service : PokemonService) { }
 
   ngOnInit() {
+    this.service.sendToLocal(this.pokemons);
   }
 
 }
