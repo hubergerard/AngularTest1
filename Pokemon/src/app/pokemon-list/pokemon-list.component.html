@@ -1,0 +1,25 @@
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-lg-5">
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let pokemon of pokemons?.results" (click)="onSelect(pokemon)">
+                    {{ pokemon.name }}
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-lg-2">
+            <app-pokemon-item [pokemon]="selectedPokemon"></app-pokemon-item>
+        </div>
+    </div>
+</div>
+
+<style>
+    li {
+        font-size: 15px;
+        ;
+        padding: 5px 5px 5px 5px !important;
+    }
+</style>
