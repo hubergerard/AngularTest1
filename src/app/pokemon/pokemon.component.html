@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-6">
+          <h3 class="text-center">Chercher un Pokemon</h3>
+          <form [formGroup]="pokemonSearch">
+
+                <div class="form-group">
+                  <input
+                    class="form-control"
+                    type="text"
+                    id="pokemonName"
+                    placeholder="Entrez un Pokemon"
+                    formControlName="pokemon"
+                  />
+                 </div>
+                 <div class="text-center"> 
+                  <button (click)="pokemonApiRequest(pokemonSearch.value)" type="submit" class="btn btn-success btn-md">
+                   Chercher un Pokemon</button>
+                 </div>
+            </form> 
+        </div>
+    </div>
+      <div class="col-md-6">
+          <h3 class="text-center">Détails du Pokemon :</h3>
+            <p class="text-center">Nom du Pokemon {{this.pokemonData?.name}}</p>
+            <p class="text-center">Numéro du Pokemon {{this.pokemonData?.id}}</p>
+    </div>
+    </div>
+
