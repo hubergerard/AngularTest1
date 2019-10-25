@@ -1,4 +1,4 @@
-<app-pokemon-list ></app-pokemon-list>
+<app-pokemon-list [pokemonnList]="dataObject"></app-pokemon-list>
 <p>TP POKEMON</p>
 
 <h3>Quel type de pokemon cherchez-vous ?</h3>
@@ -7,7 +7,8 @@
 
 <p><button (click)="onClickMe()">CHERCHER</button></p>
 
-<div ><p>la liste des <strong>pokemons</strong> est  : {{ dataObject | json }}</p></div>
+
+
 
 <div>
     <ul>
