@@ -64,4 +64,4 @@ Le component Pokemon doit ensuite afficher cette liste. Créez le component Poke
 ## Pour ceux qui veulent vraiment une bonne note :
 
 Faites en sorte qu'on puisse ajouter/supprimer (en cliquant) des Pokemon d'une liste de Pokemon favoris stockée dans le localStorage.
-Créez un onglet "Favoris" qui vous affiche la liste de vos Pokémon favoris.
+Créez un onglet "Favoris" qui vous affiche la liste (avec image) de vos Pokémon favoris.
