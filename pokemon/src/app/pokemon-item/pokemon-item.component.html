@@ -1,1 +1,6 @@
 <p>pokemon-item works!</p>
+<ul>
+        <li *ngFor="let pokemon of pokemonDetail.results">{{ pokemon.sprites }} {{ pokemon.url }}</li>
+    <li >{{ pokemonDetail.sprites }} {{ pokemon.url }}</li>
+{{pokemonDetail | json}}
+</ul>

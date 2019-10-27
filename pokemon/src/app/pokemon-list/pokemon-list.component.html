@@ -5,3 +5,8 @@
         (click)="showPokemon()">Montre Moi les Pokemons !</button>
 
 {{pokemon | json}}
+
+<ul>
+    <li *ngFor="let pokemon of pokemons.results">{{ pokemon.name }} {{ pokemon.url }}</li>
+    <app-pokemon-item></app-pokemon-item>
+</ul>

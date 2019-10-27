@@ -8,18 +8,13 @@ import { Pokemon } from "../Pokemon.model";
 })
 export class PokemonListComponent implements OnInit {
   
-  public pokemon: Pokemon[];
-  name:string;
-  url:string;
+  public pokemons: Pokemon[];
   constructor(private PokemonService: PokemonService) { }
 
   ngOnInit() {
+    this.PokemonService.getPokemons()
+    .subscribe((data: Pokemon[]) => this.pokemons = data);
+    console.log(this.pokemons)
 }
 
-
-  showPokemon() {
-    this.PokemonService.getPokemons()
-      .subscribe((data: Pokemon[]) => this.pokemon = data);
-      console.log(this.pokemon)
-  }
 }
